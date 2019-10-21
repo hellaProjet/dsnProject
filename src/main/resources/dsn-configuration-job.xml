@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+    <context:annotation-config/>
+    <context:property-placeholder file-encoding="UTF-8" system-properties-mode="OVERRIDE" />
+
+    <import resource="dsn-datasource-configuration-batch.xml" />
+    <import resource="dsn-services-configuration.xml" />
+
+    <batch:job id="importDsn">
+        <!-- INITIALISATION DU BATCH -->
+        <!-- STEP POUR LE TRAITEMENT DE CHAQUE LOT PARTENAIRE -->
+        <batch:step id="readWriteDSN">
+            <batch:tasklet transaction-manager="transactionManagerSpringBatch">
+                <batch:chunk reader="dsnreaderDsn" processor="dsnProcessor" writer="dsnWriter" commit-interval="4" />
+                <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRED" timeout="30"/>
+                <batch:listeners>
+                    <batch:listener ref="dsnStepListener" />
+                    <batch:listener ref="dsnItemWriterListener" />
+                </batch:listeners>
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
+</beans>
