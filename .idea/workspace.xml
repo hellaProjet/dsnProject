@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02dd4e6b-4052-4f58-9250-477672974c2d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dsn_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_batch_javax_batch_api_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_33.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_batch_spring_batch_core_4_0_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_batch_spring_batch_infrastructure_4_0_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_14_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_14_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com.advyteam.dsn.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com.advyteam.dsn.ipr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com.advyteam.dsn.iws" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dep.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dsn.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/inputcsv.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/batch/listener/dsnItemWriterListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/batch/listener/dsnStepListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/batch/processor/DsnProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/batch/reader/DsnReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/batch/writer/DsnWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/dto/DsnFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/dto/Establisment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/service/impl/DsnService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/advyteam/dsn/service/impl/impl/DsnServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dsn-configuration-job.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dsn-datasource-configuration-batch.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dsn-services-configuration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -679,12 +635,12 @@
       <workItem from="1571599230449" duration="456000" />
       <workItem from="1571599739565" duration="4587000" />
       <workItem from="1571605271173" duration="2132000" />
-      <workItem from="1571643745505" duration="24057000" />
+      <workItem from="1571643745505" duration="24653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31615000" />
+    <option name="totallyTimeSpent" value="32211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
