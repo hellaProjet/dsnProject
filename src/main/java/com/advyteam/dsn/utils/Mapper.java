@@ -10,11 +10,10 @@ public class Mapper implements FieldSetMapper<DsnFile> {
   @Override
   public DsnFile mapFieldSet(FieldSet fieldSet)  {
 
+    // si on a un mapping spécifique
     DsnFile report = new DsnFile();
     report.setKey(fieldSet.readString(0));
     report.setValue(fieldSet.readString(1));
-
-
     return report;
 
   }

@@ -2,7 +2,6 @@ package com.advyteam.dsn.batch.listener;
 
 import com.advyteam.dsn.dto.DsnFile;
 import org.springframework.batch.core.ItemReadListener;
-import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.stereotype.Component;
 
 @Component("dsnreaderListener")
