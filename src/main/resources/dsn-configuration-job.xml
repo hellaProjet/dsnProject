@@ -7,24 +7,33 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
 
+
     <context:annotation-config/>
     <context:property-placeholder file-encoding="UTF-8" system-properties-mode="OVERRIDE" />
 
     <import resource="dsn-datasource-configuration-batch.xml" />
     <import resource="dsn-services-configuration.xml" />
 
+
+    <bean id="customItemReaderListener" class="com.advyteam.dsn.batch.listener.CustomItemReaderListener" />
+    <bean class="com.advyteam.dsn.batch.processor.ConfigProcessor" />
+    <bean class="com.advyteam.dsn.batch.reader.DsnReader" />
+
+
     <batch:job id="importDsn">
         <!-- INITIALISATION DU BATCH -->
         <!-- STEP POUR LE TRAITEMENT DE CHAQUE LOT PARTENAIRE -->
         <batch:step id="readWriteDSN">
             <batch:tasklet transaction-manager="transactionManagerSpringBatch">
-                <batch:chunk reader="dsnreaderDsn" processor="dsnProcessor" writer="dsnWriter" commit-interval="4" />
-                <batch:transaction-attributes isolation="READ_COMMITTED" propagation="REQUIRED" timeout="30"/>
+                <batch:chunk reader="dsnreaderDsn" processor="processor" writer="dsnWriter" commit-interval="1" />
                 <batch:listeners>
                     <batch:listener ref="dsnStepListener" />
                     <batch:listener ref="dsnItemWriterListener" />
+                    <batch:listener ref="dsnreaderListener" />
                 </batch:listeners>
             </batch:tasklet>
         </batch:step>
     </batch:job>
+
+
 </beans>

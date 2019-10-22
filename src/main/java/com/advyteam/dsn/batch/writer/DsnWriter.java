@@ -15,7 +15,7 @@ public class DsnWriter implements ItemWriter<DsnFile> {
         System.out.println("writer starts");
 
         for (DsnFile item : list) {
-            System.out.println(item);
+            System.out.println("result of items are "+item);
         }
     }
 }
