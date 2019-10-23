@@ -7,12 +7,16 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component("dsnWriter")
-public class DsnWriter implements ItemWriter<DsnFile>,Constants {
+public class DsnWriter implements ItemWriter<DsnFile> {
+
+    @Autowired
+    Constants constants;
 
     @Override
     public void write(List<? extends DsnFile> list) throws Exception {
@@ -34,7 +38,7 @@ public class DsnWriter implements ItemWriter<DsnFile>,Constants {
             }
             System.out.println("result of items are "+item);
         }
-        Sheet sheet = workbook.getSheetAt(0);
+        Sheet sheet = constants.workbook.getSheetAt(0);
         Row row = sheet.createRow(currRow);
         createStringCell(row, generatedDsn.getPerpai(), 0);
         createStringCell(row, generatedDsn.getSociety(), 1);

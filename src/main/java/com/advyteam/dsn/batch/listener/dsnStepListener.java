@@ -1,4 +1,5 @@
 package com.advyteam.dsn.batch.listener;
+import com.advyteam.dsn.dto.retour.GeneratedDsn;
 import com.advyteam.dsn.utils.Constants;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -6,15 +7,19 @@ import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.StepExecution;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.batch.core.StepExecutionListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.List;
 
 @Component("dsnStepListener")
-public class dsnStepListener implements StepExecutionListener,Constants {
+public class dsnStepListener implements StepExecutionListener {
+
+  @Autowired
+  Constants constants;
 
   String outputFilename;
   int currRow = 0;
@@ -28,7 +33,7 @@ public class dsnStepListener implements StepExecutionListener,Constants {
             "yyyyMMdd_HHmmss");
     outputFilename = "GeneratedDsn" + "_" + dateTime + ".xlsx";
 
-    Sheet sheet = workbook.createSheet("Etablissement");
+    Sheet sheet = constants.workbook.createSheet("Etablissement");
     sheet.createFreezePane(0, 3, 0, 3);
     sheet.setDefaultColumnWidth(20);
 
@@ -95,8 +100,8 @@ public class dsnStepListener implements StepExecutionListener,Constants {
   }
 
   private void initDataStyle() {
-    dataCellStyle = workbook.createCellStyle();
-    Font font = workbook.createFont();
+    dataCellStyle = constants.workbook.createCellStyle();
+    Font font = constants.workbook.createFont();
 
     font.setFontHeightInPoints((short) 10);
     font.setFontName("Arial");
@@ -106,23 +111,22 @@ public class dsnStepListener implements StepExecutionListener,Constants {
 
   @Override
   public ExitStatus afterStep(StepExecution stepExecution) {
-    FileOutputStream fos = null;
     try {
-      fos = new FileOutputStream(outputFilename);
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
-    }
-    try {
-      workbook.write(fos);
-      fos.close();
+      closeExcel();
     } catch (IOException e) {
       e.printStackTrace();
     }
-
     return null;
 
   }
 
+  // fin du traitement de la création du fichier excel
+  public void closeExcel() throws IOException {
+    FileOutputStream fos = null;
+    fos = new FileOutputStream(outputFilename);
+    constants.workbook.write(fos);
+    fos.close();
+  }
 
 
 }
