@@ -18,9 +18,8 @@ public class DsnProcessor implements ItemProcessor<DsnFile, DsnFile> {
 
     public DsnFile process(final DsnFile dsnFileInput) throws Exception {
 
-
         System.out.println("processor starts "+dsnFileInput);
-        DsnFile dsnFileOuput = dsnService.generateDsnExcel(dsnFileInput);
+        DsnFile dsnFileOuput = dsnService.enregistrerDsnInformation(dsnFileInput);
 
         return dsnFileOuput;
     }
